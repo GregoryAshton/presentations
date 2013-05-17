@@ -1,0 +1,204 @@
+<html lang="en">    
+<head>
+    <meta charset="utf-8">
+    <title>A neutron star model to  evaluate  theories for timing noise</title>
+    <link rel="stylesheet" href="reveal/css/reveal.min.css">
+    <link rel="stylesheet" href="reveal/css/theme/sky.css" id="theme">    
+    <!--Add support for earlier versions of Internet Explorer -->
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+	<!-- mathjax -->
+	<script type="text/x-mathjax-config">
+	  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']],
+						   displayMath: [['\\[','\\]'], ['$$','$$']]}});
+	</script>
+	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</head>
+ 
+<body>
+    <!-- Wrap the entire slide show in a div using the "reveal" class. -->
+    <div class="reveal" >
+        <!-- Wrap all slides in a single "slides" class -->
+        <div class="slides">
+
+
+             <section id="Title page">
+                <h3>A neutron star model to <br> evaluate  theories for timing noise</h3>
+				<p> <br> </p>
+				<p> <br> </p>
+				<p> </p>
+				<p> </p>
+                <p>A noisy elephant in the room</p>
+
+            </section>
+ 
+            <section>
+				<section>
+					<h3>The obligatory: <em> What is timing noise? </em> </h3>
+					<p> <br> </p>
+					<p class="fragment ">Unmodelled structure observed in the timing residuals:</p>
+					<p> <br> </p>
+						<p class="fragment "> $ \delta T = TOA_{\textrm{model}} - TOA_{\textrm{observation}} $</p>
+				</section> 
+
+				<section>
+					<h4> Three examples timing residuals </h4>
+					<p><img src="Residuals.png" width="800" /></p>
+					<p   style="font-size:18px;text-align:left"> Image from Hobbs, Lyne & Kramer 2010.</p>
+				</section>
+
+            </section>
+
+            <section>
+				<h3>Two well founded but conflicting ideas on the origin</h3>
+			</section>
+
+			<section>
+				<section>
+				<h3>1) Periodic and instantaneous changes in the spin down rate</h3>
+				<p class="fragment ">Lyne 2010 found periodic switching in both the beam signal and spin down rate.</p>
+				<p class="fragment "><img src="two_nudots.png" width="500"  style="border-style: none; background-color:none; box-shadow:none" /></p> </p>
+				</section>
+
+				<section>
+				<p class="fragment " style="text-align:left"> <li> Such sharp periodic changes must be magnetospheric in origin</li> </p>
+				<p><br></p>
+				<p class="fragment " style="text-align:left">  <li>No known magnetospheric mechanism works on the time scale required $\sim 1 $yr  </li></p>
+				</section>
+
+            </section>
+
+
+            <section>
+				<section>
+				<h3>2) And don't forget precession...</h3>
+				<p><img src="480px-Praezession.png" width="400"  style="border-style: none; background-color:none; box-shadow:none" /></p> 
+				</section>
+
+				<section style="text-align:left">
+				<li class="fragment " >All non-spherical bodies will undergo precession unless aligned with a principle axis</li> 
+				<p><br></p>
+				<li class="fragment " >Precession time scale $\sim \frac{1}{\epsilon \nu}$ produce periods of the correct time scale</li>
+				<p><br></p>
+				<li class="fragment ">And a nice video of the <a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=cyKN0Ngtd28">vela pulsar</a></li>
+				<p><br></p>
+				<li class="fragment " style="font-weight:bold">The immediate effect of precession on the beam signal will be smooth unlike the sharp changes seen by Lyne </li>
+				</section>
+            </section>
+
+			<section>
+				<section>
+					<h3>Possible solution..</h3>
+					<p> <br> </p>
+					<li> Jones 2010 - Delicate balancing between two magnetospheric states</li>
+					<p> <br> </p>
+					<li> Stochastic resonance, best explained by a simple toy model..</li>
+				</section>
+
+				<section>
+				<p><img src="stochastic_resonance.png" width="600"  style="border-style: none; background-color:none" /></p> 		
+				</section>
+
+			</section>
+
+			<section  >
+
+				<section style="text-align:center">
+				<h3>Modelling a neutron star part I.</h3>	<ul>
+				<p>First attempt to model an elastic fluid acted upon by an electromagnetic torque</p>
+				<p>Equations of motion are 3 coupled ODEs</p>
+				<p><br></p>
+				<p style="text-align:center;float:left"><br>
+				$ I\dot{\boldsymbol{\omega}}+\boldsymbol{\omega} \times (I\boldsymbol{\omega}) = \boldsymbol{T}_{EM} $ <br><br>
+				$ \left[\frac{d}{dt}\boldsymbol{J}\right]_{inertial}= \boldsymbol{T} $
+				</p>				
+				<p style="text-align:center;float:right"> <img src="setup.svg" width="400" style="border-style: none; background-color:none; box-shadow:none" /></p>
+				</section>
+
+				<section>
+				<video width="800" height="600" controls>
+				  <source src="chi_30.webm" type="video/webm">
+				</video> 
+				</section>
+
+				<section>
+				<h4> Summary of results </h4>
+                                 <li> Spin vector aligns with the principle axis of the moment of inertia </li>
+				</section>
+
+			</section>
+
+				<section>
+				<section style="text-align:center">
+				<h3>Modelling a neutron star part II.</h3>	<ul>
+				<p> Add in a spherical fluid core coupled frictionally to the shell</p>
+				<p style="text-align:left;float:left">
+				<br><br>
+			         ${T}_{diss}=K(\boldsymbol{\Omega} - \boldsymbol{\omega}) $
+				<br><br>
+		                 $I_{s}\dot{\boldsymbol{\omega}}+\boldsymbol{\omega} \times (I_{s}\boldsymbol{\omega}) = \boldsymbol{T}_{EM}+\boldsymbol{T}_{diss} $
+				<br><br>
+			         $I_{c}\dot{\boldsymbol{\Omega}}+\boldsymbol{\omega} \times (I_{c}\boldsymbol{\Omega}) = -\boldsymbol{T}_{diss} $</p>		
+			
+				<p style="text-align:center;float:right"> <img src="setup_with_core.svg" width="400" style="border-style: none; background-color:none; box-shadow:none" /></p>				
+				</section>	
+
+			</section>
+            </div>
+    </div>
+
+
+
+    <script src="reveal/lib/js/head.min.js"></script>
+    <script src="reveal/js/reveal.min.js"></script>
+ 
+
+	<script>
+
+	// Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
+	Reveal.initialize({
+	controls: true,
+	progress: true,
+	history: true,
+
+	theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+	transition: 'linear', // default/cube/page/concave/zoom/linear/none
+
+	// Optional libraries used to extend on reveal.js
+	dependencies: [
+	{ src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+	{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+	{ src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+	{ src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+	{ src: 'http://s7.addthis.com/js/300/addthis_widget.js', async: true},
+	{ src: 'js/mathjax-onload.js', async: true}
+	]
+	});
+	</script>
+
+    <script>
+        // Required, even if empty.
+        Reveal.initialize({
+		controls: false,
+                overview: true,
+                center: true,
+		margin: 0.01,
+		width: 1080,
+		height: 900,
+        });
+
+		Reveal.addEventListener( 'slidechanged', function( event ) {
+			// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+		} );
+		Reveal.addEventListener( 'slidechanged', function( event ) {
+			MathJax.Hub.Rerender(event.currentSlide);
+		});
+
+    </script>
+
+	
+</body>
+</html>
